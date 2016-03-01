@@ -15,7 +15,7 @@ class RegisterTest extends \TestCase
 
         return $app;
     }
-    
+
     /**
      * A basic email validation login test.
      *
