@@ -1,0 +1,1 @@
+module.exports = require("npm:vue-resource@0.7.0/src/index.js");

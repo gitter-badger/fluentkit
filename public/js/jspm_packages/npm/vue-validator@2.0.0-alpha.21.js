@@ -1,0 +1,1 @@
+module.exports = require("npm:vue-validator@2.0.0-alpha.21/dist/vue-validator.common.js");

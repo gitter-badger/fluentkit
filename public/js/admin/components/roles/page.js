@@ -1,0 +1,2 @@
+"use strict";System.register(["util","vue"],function(e,t){var n,i,o;return{setters:[function(e){n=e},function(e){i=e["default"]}],execute:function(){o={template:"#admin-roles-page-template",props:{url:String},data:function(){return{edit_role:!1,role:{name:"",label:"",permissions:[]}}},events:{editRole:function(e){this.role=e,this.edit_role=!0}},methods:{addNew:function(){}}},e("default",i.component("admin-roles-page",o))}}});
+//# sourceMappingURL=page.js.map

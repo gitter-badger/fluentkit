@@ -1,0 +1,50 @@
+.roles-card {
+  width:100%;
+  /*min-height:400px;*/
+  margin-top: 16px;
+}
+
+#admin-roles-table{
+
+  .roles-table{
+    width: 100%;
+    margin-left: -1px;
+    margin-right: -1px;
+    width: calc(100% + 2px);
+
+    /*td:first-of-type,
+    th:first-of-type {
+      width: 67px;
+    }*/
+  }
+
+  .roles-table-pagination{
+    text-align: right;
+
+    small{
+      font-size: 70%;
+      color: rgba(0,0,0, .75);
+    }
+  }
+
+  .table-search{
+    float: left;
+
+    .mdl-textfield{
+      padding: 0px;
+    }
+  }
+}
+
+#admin-roles-create{
+  width: 100%;
+
+  .roles-create-card{
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .mdl-card__actions{
+    background: rgba(0,0,0, 0.075);
+  }
+}

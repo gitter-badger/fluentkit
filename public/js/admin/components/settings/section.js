@@ -1,0 +1,2 @@
+"use strict";System.register(["vue"],function(e,t){var i,n;return{setters:[function(e){i=e["default"]}],execute:function(){n={template:"#admin-settings-section-template",props:{section:Object},data:function(){return{fields_visible:!1}},methods:{closeSection:function(){fields_visible=!1}},events:{"close-panel":function(){this.fields_visible=!1}}},e("default",i.component("admin-settings-section",n))}}});
+//# sourceMappingURL=section.js.map

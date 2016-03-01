@@ -1,0 +1,24 @@
+---
+ip: "192.168.11.11"
+memory: 2048
+cpus: 1
+hostname: fluentkit-vm
+name: fluentkit-vm
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "./"
+      to: "/home/vagrant/fluentkit"
+
+sites:
+    - map: fluentkit.app
+      to: "/home/vagrant/fluentkit/public"
+      schedule: true
+
+databases:
+    - fluentkit

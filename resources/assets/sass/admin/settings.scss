@@ -1,0 +1,67 @@
+#admin-settings-page{
+  width: 100%;
+}
+
+.settings-card{
+  width: 100%;
+}
+
+.mdl-card__supporting-text.mdl-card--border{
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#admin-settings-page{
+  position: relative;
+}
+
+.settings-grid{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+
+  .mdl-cell{
+    display: flex;
+
+    .mdl-card{
+      flex: 1;
+      min-height: 240px;
+
+      .mdl-card__actions{
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+  }
+}
+
+.admin-settings-panel{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+
+  .mdl-card__actions{
+    background: rgba(0,0,0, 0.075);
+
+    .unsaved_warning{
+      float: left;
+      margin: 2px 0px 0px 2px;
+    }
+  }
+}
+
+.admin-settings-section{
+  .section-info{
+    cursor: pointer;
+  }
+
+  .section-fields{
+    margin-top: 20px;
+  }
+}
+
+.admin-settings-field {
+
+  .mdl-textfield {
+    margin-top: -20px;
+  }
+}

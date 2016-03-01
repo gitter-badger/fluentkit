@@ -1,0 +1,39 @@
+$image_path: '/images/material';
+
+@import "node_modules/material-design-lite/src/material-design-lite";
+
+@import "https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en";
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#loading {
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  position: absolute;
+  z-index: 99999;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+/**
+ * fix some mdl stuff
+ */
+.mdl-card__supporting-text{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/**
+ * globals
+ */
+.text-right{
+  text-align: right;
+}

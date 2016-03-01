@@ -1,0 +1,2 @@
+"use strict";System.register(["vue"],function(t,n){var i,o;return{setters:[function(t){i=t["default"]}],execute:function(){o={template:"#notifications-template",ready:function(){this.$root.$on("notification",function(t){this.$root.$broadcast("notification",t)})},events:{notification:"notify"},methods:{notify:function(t){this.$el.MaterialSnackbar.showSnackbar(t)}}},t("default",i.component("notifications",o))}}});
+//# sourceMappingURL=notifications.js.map
