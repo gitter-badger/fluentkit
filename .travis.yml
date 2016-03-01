@@ -7,10 +7,6 @@ php:
   - hhvm
   - nightly
 
-env:
-  global:
-    - setup=basic
-
 install:
   - travis_retry composer install --no-interaction --prefer-source
   - touch tests/test.sqlite
