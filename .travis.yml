@@ -7,8 +7,11 @@ php:
   - hhvm
   - nightly
 
+env:
+  - APP_KEY=jCGotmYwQYTf9w9qBwQrVuV8OKQ5gyQF
+
 install:
-  - travis_retry composer install --no-interaction --prefer-source
   - touch tests/test.sqlite
+  - travis_retry composer install --no-interaction --prefer-source
 
 script: vendor/bin/phpunit
