@@ -5,6 +5,17 @@ use App\Models\User;
 
 class RegisterTest extends \TestCase
 {
+
+    public function createApplication(){
+
+        $app = parent::createApplication();
+
+        //we must do this to test the routes or they will fail
+        config()->set('user.allow_registration', true);
+
+        return $app;
+    }
+    
     /**
      * A basic email validation login test.
      *
