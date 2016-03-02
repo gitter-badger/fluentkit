@@ -55,7 +55,7 @@ In the meantime please take a look, we encourage tinkering but bear in mind we a
 
 Great, if your here it sounds like you want to help us out. Thanks!
 
-The framework is self contained and is setup to run inside a vagrant container during development.
+The framework is self contained and is setup to run inside a vagrant vm during development.
 
 To ensure elements are tested in a consistent environment please run all tests through this vagrant box.
 
@@ -65,7 +65,13 @@ The first thing to do is clone your fork, then run:
 
 This will build the box, log you in and migrate the database including seeding it with sample data.
 
-Make your additions, create tests and then run: ```vendor/bin/phpunit```.
+Make your additions, create tests and then run: ```phpunit```.
+
+If all is well you will need to run ```php-cs-fixer fix``` to ensure your code complies with the coding standards,
+don't worry we have a fixer file which will do all the hard work for you.
+
+This step shouldn't be omitted as the framework will automatically check the standards using a service called Nitpick CI on any pull request,
+and requests not passing the test wont be considered until they do pass.
 
 When your done, commit your changes and open a pull request, assuming the request passes the tests and is accepted we will merge it.
 
