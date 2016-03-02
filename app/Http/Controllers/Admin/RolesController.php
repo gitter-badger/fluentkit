@@ -22,10 +22,6 @@ class RolesController extends Controller
         return view('admin.roles.index')->with('page_title', trans('admin.roles_title'));
     }
 
-    public function getCreate(){
-        return view('admin.roles.create')->with('page_title', trans('admin.roles_create_title'));
-    }
-
     public function getEdit($id){
         return view('admin.roles.edit')->with('page_title', trans('admin.roles_title'));
     }

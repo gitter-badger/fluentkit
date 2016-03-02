@@ -72,7 +72,6 @@ Route::group(['middleware' => ['web']], function () {
 
         // Roles
         Route::get('/roles', ['as' => 'roles', 'uses' => 'RolesController@getIndex']);
-        Route::get('/roles/create', ['as' => 'roles.create', 'uses' => 'RolesController@getCreate']);
         Route::get('/roles/{id}', ['as' => 'roles.edit', 'uses' => 'RolesController@getEdit']);
 
         // Settings

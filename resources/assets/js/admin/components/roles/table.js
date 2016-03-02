@@ -4,7 +4,6 @@ import Vue from 'vue'
 var adminRolesTable = {
     template: '#admin-roles-table-template',
     props: {
-        url: String,
         per_page: String
     },
     data: function(){
@@ -39,7 +38,7 @@ var adminRolesTable = {
                 data.q = ['label:like:' + this.search];
             }
 
-            this.$http.get(this.url, data).then(function (response) {
+            this.$http.get(this.$root.routes.route('api.roles'), data).then(function (response) {
 
                 this.roles = response.data.data;
                 this.from = response.data.from;
@@ -79,10 +78,17 @@ var adminRolesTable = {
                 return;
             }
             window.location.href = this.$root.routes.route('admin.roles.edit', {id: role.id});
+        },
+        addRole(event){
+            event.preventDefault();
+            event.stopPropagation();
+            this.$dispatch('add-role');
         }
     },
     ready: function(){
-        this.fetchPage(this.page);
+        setTimeout(function(){
+            this.fetchPage(this.page);
+        }.bind(this), 100);
     }
 };
 

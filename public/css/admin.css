@@ -11323,6 +11323,10 @@ html, body {
 .admin-settings-field .mdl-textfield {
   margin-top: -20px; }
 
+#admin-roles-page {
+  width: 100%;
+  position: relative; }
+
 .roles-card {
   width: 100%;
   /*min-height:400px;*/
@@ -11350,10 +11354,13 @@ html, body {
     padding: 0px; }
 
 #admin-roles-create {
-  width: 100%; }
+  position: absolute;
+  top: 0px; }
   #admin-roles-create .roles-create-card {
     width: 100%;
     margin-top: 16px; }
+  #admin-roles-create .mdl-textfield {
+    margin-top: -20px; }
   #admin-roles-create .mdl-card__actions {
     background: rgba(0, 0, 0, 0.075); }
 

@@ -1,3 +1,8 @@
+#admin-roles-page{
+  width: 100%;
+  position: relative;
+}
+
 .roles-card {
   width:100%;
   /*min-height:400px;*/
@@ -37,11 +42,16 @@
 }
 
 #admin-roles-create{
-  width: 100%;
+  position: absolute;
+  top: 0px;
 
   .roles-create-card{
     width: 100%;
     margin-top: 16px;
+  }
+
+  .mdl-textfield {
+    margin-top: -20px;
   }
 
   .mdl-card__actions{

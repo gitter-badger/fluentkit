@@ -54,7 +54,7 @@ class RolesController extends Controller
         $this->validate($request, [
             'name' => 'required|string|alpha_dash|unique:roles,name',
             'label' => 'required|string',
-            'permissions' => 'sometimes|required|array'
+            'permissions' => 'array'
         ]);
 
         //fetch all permissions requested, if all dont exist bail as we cant create relationships here
@@ -72,7 +72,7 @@ class RolesController extends Controller
         }
 
         //new up a role and assign permissions
-        $role = new Role($request->only(['name', 'label']));
+        $role = Role::create($request->only(['name', 'label']));
 
         foreach($permissions as $permission){
             $role->givePermissionTo($permission);
