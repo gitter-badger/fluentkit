@@ -69,4 +69,8 @@ return [
         'view' => 'admin.components.roles.create',
         'js' => 'admin/components/roles/create',
     ],
+    'admin-roles-edit' => [
+        'view' => 'admin.components.roles.edit',
+        'js' => 'admin/components/roles/edit',
+    ],
 ];

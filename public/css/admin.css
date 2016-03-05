@@ -11261,6 +11261,8 @@ html, body {
   -ms-flex-pack: center;
   justify-content: center;
   z-index: 1000; }
+  #loading-overlay.fade-leave {
+    z-index: -1000; }
 
 .fade-transition {
   transition: all .5s ease;
@@ -11362,6 +11364,17 @@ html, body {
   #admin-roles-create .mdl-textfield {
     margin-top: -20px; }
   #admin-roles-create .mdl-card__actions {
+    background: rgba(0, 0, 0, 0.075); }
+
+#admin-roles-edit {
+  position: absolute;
+  top: 0px; }
+  #admin-roles-edit .roles-edit-card {
+    width: 100%;
+    margin-top: 16px; }
+  #admin-roles-edit .mdl-textfield {
+    margin-top: -20px; }
+  #admin-roles-edit .mdl-card__actions {
     background: rgba(0, 0, 0, 0.075); }
 
 /*# sourceMappingURL=admin.css.map */

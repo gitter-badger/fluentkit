@@ -1,5 +1,6 @@
 import * as util from 'util'
 import Vue from 'vue'
+import _ from 'lodash'
 
 var adminRolesCreate = {
     template: '#admin-roles-create-template',
@@ -32,9 +33,11 @@ var adminRolesCreate = {
 
                     //validation/authorization error - set the errors as returned or clear
                     var errors = util.formatValidationErrors(response.data.errors);
-                    errors.forEach(function(error){
-                        error.field = error.field.substring(9);
-                    });
+                    /*var errors = _.flatMap(response.data.errors, function(messages, key){
+                        return _.map(messages, function(message){
+                            return {field: key, message: message};
+                        });
+                    });*/
                     this.$setValidationErrors(errors);
 
                 }else if (response.status == 401) {

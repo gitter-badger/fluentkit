@@ -118,17 +118,8 @@ class RolesController extends Controller
         }
 
         $this->validate($request, [
-            'label' => 'sometimes|required|string',
-            'permissions' => 'sometimes|required|array'
+            'label' => 'sometimes|required|string'
         ]);
-
-        if(count($request->get('permissions', [])) > 0){
-            $permissions = Permission::whereIn('name', $request->get('permissions', []))->get();
-            foreach($permissions as $permission){
-                $role->givePermissionTo($permission);
-            }
-            $role->load('permissions');
-        }
 
         if($request->get('label', false) !== false){
             $role->label = $request->get('label');
@@ -164,6 +155,50 @@ class RolesController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => trans('api.resource_deleted', ['resource' => trans('global.role')]),
+        ])->setStatusCode(200);
+    }
+
+    public function patchPermissionsUpdate($id, Request $request){
+        $role = Role::findOrFail($id);
+
+        $this->validate($request, [
+            'permissions' => 'required|array'
+        ]);
+
+        $permissions = Permission::whereIn('name', $request->get('permissions', []))->get();
+        foreach($permissions as $permission){
+            $role->givePermissionTo($permission);
+        }
+
+        $role->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => trans('api.resource_updated', ['resource' => trans('global.role')]),
+        ])->setStatusCode(200);
+    }
+
+    public function putPermissionsUpdate($id, Request $request){
+
+        $role = Role::findOrFail($id);
+
+        $this->validate($request, [
+            'permissions' => 'required|array'
+        ]);
+
+        // fetch an id list array of the permissions we need
+        $permissions = Permission::whereIn('name', $request->get('permissions', []))->get();
+        $ids = [];
+        foreach($permissions as $permission){
+            $ids[] = $permission->id;
+        }
+
+        // sync to current role
+        $role->permissions()->sync($ids);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => trans('api.resource_updated', ['resource' => trans('global.role')]),
         ])->setStatusCode(200);
     }
 

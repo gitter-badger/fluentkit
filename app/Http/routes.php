@@ -93,6 +93,8 @@ Route::group(['middleware' => ['api'], 'namespace' => '\Api', 'prefix' => 'api',
     Route::get('/roles/{id}', ['middleware' => 'auth:api', 'as' => 'roles.show', 'uses' => 'RolesController@getShow']);
     Route::patch('/roles/{id}', ['middleware' => 'auth:api', 'as' => 'roles.update', 'uses' => 'RolesController@patchUpdate']);
     Route::delete('/roles/{id}', ['middleware' => 'auth:api', 'as' => 'roles.destroy', 'uses' => 'RolesController@deleteDestroy']);
+    Route::patch('/roles/{id}/permissions', ['middleware' => 'auth:api', 'as' => 'roles.permissions.update', 'uses' => 'RolesController@patchPermissionsUpdate']);
+    Route::put('/roles/{id}/permissions', ['middleware' => 'auth:api', 'as' => 'roles.permissions.set', 'uses' => 'RolesController@putPermissionsUpdate']);
     Route::delete('/roles/{id}/permissions/{permissionid}', ['middleware' => 'auth:api', 'as' => 'roles.permissions.destroy', 'uses' => 'RolesController@deletePermissionsDestroy']);
 
 });

@@ -6,8 +6,9 @@
     'users_title' => 'Users',
     'roles_title' => 'Roles',
     'roles_create_title' => 'Create Role',
+    'roles_edit_title' => 'Edit {{ role.label }} Role',
     'roles_description' => 'Manage your sites user roles below.',
-    'roles_create_description' => 'Create a new user role below.',
+    'roles_edit_description' => 'Edit the {{ role.label }} role below.',
 
 
 

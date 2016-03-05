@@ -194,17 +194,14 @@ class RolesTest extends \TestCase
         //admin wont have any roles, as by default there super users so checks always return true
         $this->assertFalse($role->hasPermission('update.application'));
 
-        $this->json('patch', '/api/roles/' . $role->id, [
+        $this->json('patch', '/api/roles/' . $role->id . '/permissions', [
             'api_token' => $user->api_token,
-            'label' => 'A Test Role',
             'permissions' => [
                 'update.application'
             ]
         ])->seeJson([
             'status' => 'success',
             'message' => trans('api.resource_updated', ['resource' => trans('global.role')])
-        ])->seeJsonStructure([
-            'role',
         ])->assertResponseStatus(200);
 
     }
