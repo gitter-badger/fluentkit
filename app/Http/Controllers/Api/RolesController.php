@@ -232,4 +232,28 @@ class RolesController extends Controller
         ])->setStatusCode(200);
     }
 
+    public function deletePermissionsDestroyAll($id){
+
+        $role = Role::findOrFail($id);
+
+        if($role->name == 'administrator'){
+            return response()->json([
+                'status' => 'failed',
+                'message' => trans('api.resource_delete_failed_relationship', ['relationship' => trans('global.permission')]),
+                'errors' => [
+                    'name' => [
+                        trans('global.role_admin_update_error')
+                    ]
+                ]
+            ])->setStatusCode(422);
+        }
+
+        $role->permissions()->sync([]);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => trans('api.resource_deleted', ['resource' => trans('global.permission')]),
+        ])->setStatusCode(200);
+    }
+
 }
