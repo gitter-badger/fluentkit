@@ -70,6 +70,10 @@ Route::group(['middleware' => ['web']], function () {
         // Dashboard
         Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@getIndex']);
 
+        // Users
+        Route::get('/users', ['as' => 'users', 'uses' => 'UsersController@getIndex']);
+        Route::get('/users/{id}', ['as' => 'users.edit', 'uses' => 'UsersController@getEdit']);
+
         // Roles
         Route::get('/roles', ['as' => 'roles', 'uses' => 'RolesController@getIndex']);
         Route::get('/roles/{id}', ['as' => 'roles.edit', 'uses' => 'RolesController@getEdit']);
@@ -97,5 +101,17 @@ Route::group(['middleware' => ['api'], 'namespace' => '\Api', 'prefix' => 'api',
     Route::put('/roles/{id}/permissions', ['middleware' => 'auth:api', 'as' => 'roles.permissions.set', 'uses' => 'RolesController@putPermissionsUpdate']);
     Route::delete('/roles/{id}/permissions', ['middleware' => 'auth:api', 'as' => 'roles.permissions.destroy.all', 'uses' => 'RolesController@deletePermissionsDestroyAll']);
     Route::delete('/roles/{id}/permissions/{permissionid}', ['middleware' => 'auth:api', 'as' => 'roles.permissions.destroy', 'uses' => 'RolesController@deletePermissionsDestroy']);
+
+
+    // Users
+    Route::get('/users', ['middleware' => 'auth:api', 'as' => 'users', 'uses' => 'UsersController@getIndex']);
+    Route::post('/users', ['middleware' => 'auth:api', 'as' => 'users.create', 'uses' => 'UsersController@postCreate']);
+    Route::get('/users/{id}', ['middleware' => 'auth:api', 'as' => 'users.show', 'uses' => 'UsersController@getShow']);
+    Route::patch('/users/{id}', ['middleware' => 'auth:api', 'as' => 'users.update', 'uses' => 'UsersController@patchUpdate']);
+    Route::delete('/users/{id}', ['middleware' => 'auth:api', 'as' => 'users.destroy', 'uses' => 'UsersController@deleteDestroy']);
+    Route::patch('/users/{id}/roles', ['middleware' => 'auth:api', 'as' => 'users.roles.update', 'uses' => 'UsersController@patchRolesUpdate']);
+    Route::put('/users/{id}/roles', ['middleware' => 'auth:api', 'as' => 'users.roles.set', 'uses' => 'UsersController@putRolesUpdate']);
+    Route::delete('/users/{id}/roles', ['middleware' => 'auth:api', 'as' => 'users.roles.destroy.all', 'uses' => 'UsersController@deleteRolesDestroyAll']);
+    Route::delete('/users/{id}/roles/{roleid}', ['middleware' => 'auth:api', 'as' => 'users.roles.destroy', 'uses' => 'UsersController@deleteRolesDestroy']);
 
 });

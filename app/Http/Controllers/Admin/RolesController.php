@@ -18,6 +18,7 @@ class RolesController extends Controller
         parent::__construct();
 
         $this->middleware('can:view.roles', ['only' => 'getIndex']);
+        $this->middleware('can:edit.roles', ['only' => 'getEdit']);
     }
 
     public function getIndex(){

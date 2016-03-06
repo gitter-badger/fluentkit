@@ -30,7 +30,7 @@ class RolesController extends Controller
 
         $this->middleware('can:view.roles', ['only' => ['getIndex', 'getShow']]);
         $this->middleware('can:create.roles', ['only' => 'postCreate']);
-        $this->middleware('can:update.roles', ['only' => ['patchUpdate', 'deletePermissionsDestroy']]);
+        $this->middleware('can:update.roles', ['only' => ['patchUpdate', 'patchPermissionsUpdate', 'putPermissionsUpdate', 'deletePermissionsDestroy', 'deletePermissionsDestroyAll']]);
         $this->middleware('can:delete.roles', ['only' => 'deleteDestroy']);
     }
 

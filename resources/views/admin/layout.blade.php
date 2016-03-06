@@ -74,8 +74,7 @@
             <a class="mdl-navigation__link @if(Request::route()->getName() == 'admin.dashboard') is-active @endif" href="{{ route('admin.dashboard') }}"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>{{ trans('admin.dashboard_title') }}</a>
             <a class="mdl-navigation__link js-dropdown" href="#"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>{{ trans('admin.users_title') }}</a>
             <div class="mdl-navigation__dropdown">
-                <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">pageview</i>{{ trans('global.view_all') }}</a>
-                <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person_add</i>{{ trans('global.add_new') }}</a>
+                <a class="mdl-navigation__link" @if(Request::route()->getName() == 'admin.users') is-active @endif" href="{{ route('admin.users') }}"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">pageview</i>{{ trans('global.view_all') }}</a>
                 <a class="mdl-navigation__link @if(Request::route()->getName() == 'admin.roles') is-active @endif" href="{{ route('admin.roles') }}"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">lock</i>{{ trans('admin.roles_title') }}</a>
             </div>
             <a class="mdl-navigation__link @if(Request::route()->getName() == 'admin.settings') is-active @endif" href="{{ route('admin.settings') }}"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>{{ trans('admin.settings_title') }}</a>

@@ -24,6 +24,7 @@ return [
 
     '404_not_found' => '404 Not Found',
 
+    'user' => 'User',
 
     'role' => 'Role',
     'roles' => 'Roles',
