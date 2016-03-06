@@ -1,2 +1,3 @@
 * text=auto
 public/js/jspm_packages/* linguist-vendored
+*.css linguist-vendored
