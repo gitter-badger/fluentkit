@@ -2,7 +2,6 @@
 
 namespace App\Services\SystemJs;
 
-
 class SystemJs
 {
 

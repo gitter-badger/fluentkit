@@ -45,9 +45,12 @@ class UsersController extends Controller
         $order = $request->get('order', 'asc');
         $per_page = $this->getPerPage($request);
 
-        return $this->repo->with($includes)
-            ->where($where)
-            ->orderBy($sort, $order)
+        $query = $this->repo->with($includes);
+        foreach($where as $w){
+            $query = $query->orWhere($w[0], $w[1], $w[2]);
+        }
+
+        return $query->orderBy($sort, $order)
             ->paginate($per_page)
             ->appends($request->query());
     }
@@ -171,12 +174,12 @@ class UsersController extends Controller
         ])->setStatusCode(200);
     }
 
-    public function putUsersUpdate($id, Request $request){
+    public function putRolesUpdate($id, Request $request){
 
         $user = $this->repo->findOrFail($id);
 
         $this->validate($request, [
-            'roles' => 'required|array'
+            'roles' => 'array'
         ]);
 
         // fetch an id list array of the permissions we need

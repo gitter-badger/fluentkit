@@ -26,6 +26,8 @@ return [
 
     'user' => 'User',
 
+    'name' => 'Name',
+
     'role' => 'Role',
     'roles' => 'Roles',
     'role_name' => 'Role Name',

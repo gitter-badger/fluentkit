@@ -73,4 +73,22 @@ return [
         'view' => 'admin.components.roles.edit',
         'js' => 'admin/components/roles/edit',
     ],
+
+
+    'admin-users-page' => [
+        'view' => 'admin.components.users.page',
+        'js' => 'admin/components/users/page',
+    ],
+    'admin-users-table' => [
+        'view' => 'admin.components.users.table',
+        'js' => 'admin/components/users/table',
+    ],
+    'admin-users-create' => [
+        'view' => 'admin.components.users.create',
+        'js' => 'admin/components/users/create',
+    ],
+    'admin-users-edit' => [
+        'view' => 'admin.components.users.edit',
+        'js' => 'admin/components/users/edit',
+    ],
 ];

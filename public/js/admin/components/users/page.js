@@ -1,0 +1,2 @@
+"use strict";System.register(["util","vue"],function(e,t){var n,u,s;return{setters:[function(e){n=e},function(e){u=e["default"]}],execute:function(){s={template:"#admin-users-page-template",data:function(){return{add_user:!1}},events:{"close-create":function(){this.add_user=!1},"add-user":function(){this.add_user=!0}}},e("default",u.component("admin-users-page",s))}}});
+//# sourceMappingURL=page.js.map

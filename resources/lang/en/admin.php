@@ -6,6 +6,14 @@
 
     'users_title' => 'Users',
 
+    'users_create_title' => 'Create User',
+    'users_edit_title' => 'Edit {{ user.email }}',
+    'users_description' => 'Manage your sites users below.',
+    'users_edit_description' => 'Edit {{ user.email }} below.',
+    'users_create_description' => 'Create a new User below',
+
+    'users_create' => 'Create User',
+    'users_update' => 'Update User',
 
     'roles_title' => 'Roles',
 
@@ -13,6 +21,7 @@
     'roles_edit_title' => 'Edit {{ role.label }} Role',
     'roles_description' => 'Manage your sites user roles below.',
     'roles_edit_description' => 'Edit the {{ role.label }} role below.',
+    'roles_create_description' => 'Create a new Role below',
 
 
     'settings_title' => 'Settings',
