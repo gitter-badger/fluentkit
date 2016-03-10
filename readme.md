@@ -1,5 +1,7 @@
 # Fluentkit Application Framework
 
+[![Join the chat at https://gitter.im/fluentkit/fluentkit](https://badges.gitter.im/fluentkit/fluentkit.svg)](https://gitter.im/fluentkit/fluentkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/fluentkit/fluentkit.svg?branch=master)](https://travis-ci.org/fluentkit/fluentkit)
 [![Total Downloads](https://poser.pugx.org/fluentkit/fluentkit/d/total.svg)](https://packagist.org/packages/fluentkit/fluentkit)
 [![Latest Stable Version](https://poser.pugx.org/fluentkit/fluentkit/v/stable)](https://packagist.org/packages/fluentkit/fluentkit)
